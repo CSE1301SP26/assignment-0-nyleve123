@@ -13,7 +13,12 @@ public class RobotThread extends Thread {
 	}
 	
 	public void run() {
-		instr.act(motion);
+		try {
+			instr.act(motion);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
